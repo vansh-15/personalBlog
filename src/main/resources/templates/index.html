@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+
+<h1>Blog Articles</h1>
+
+<ul>
+    <li th:each="a: ${articles}">
+        <a th:href="@{'/article/' +${a.id}}">
+            <a th:href="@{'/article/' + ${a.id}}">
+                <span th:text="${a.title}"></span>
+            </a>
+            <small th:text="${a.date}"></small>
+    </li>
+</ul>
+
+<a href="/admin/dashboard">Admin Dashboard</a>
+
+
+</body>
+</html>

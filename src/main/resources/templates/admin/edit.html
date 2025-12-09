@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Edit Article</h1>
+
+<form action="/admin/edit" method="post">
+
+    <input type="hidden" name="id" th:value="${article.id}">
+
+    <input name="title" th:value="${article.title}" required><br><br>
+
+    <textarea name="content" th:text="${article.content}" required></textarea><br><br>
+
+    <input type="date" name="date" th:value="${article.date}"><br><br>
+
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>

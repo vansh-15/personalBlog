@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+
+<a th:href="@{/admin/add}">Add Article</a>
+
+<ul>
+    <!-- iterate over the 'articles' list the controller added -->
+    <li th:each="article : ${articles}">
+        <strong th:text="${article.title}">Title</strong>
+        <br/>
+        <small th:text="${article.date}">Date</small>
+        <p th:text="${article.description}">Description</p>
+
+        <!-- edit/delete links -->
+        <a th:href="@{'/admin/edit/' + ${article.id}}">Edit</a> |
+        <a th:href="@{'/admin/delete/' + ${article.id}}">Delete</a>
+    </li>
+</ul>
+
+</body>
+</html>
